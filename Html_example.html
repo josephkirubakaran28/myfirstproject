@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="src/style.css"> -->
+     <style>
+        header, nav, section, footer { display: flex; flex: 0 0 100%; max-width: 100%; justify-content: center;}
+        .main { width: 1180px; margin: 0 auto; padding: 1rem;}
+        p, h1,h2,h3,h4,h5,h6 { margin: 0; margin-bottom: .5rem;}
+        header {
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            justify-content: space-evenly;
+            background-color: grey;
+            padding: 1rem;
+            border-radius: .25rem;
+        }
+        nav a { padding: .75rem; background-color: aliceblue; color: black; border-radius: .25rem; text-decoration: none;}
+        section.proudct-list { flex-wrap: wrap; justify-content: space-between;}
+        section.proudct-list figure {
+            flex: 0 0 30%;
+            max-width: 30%;
+            padding: .5rem;
+            border:1px solid #ddd;
+            text-align: center;
+            margin: 0;
+
+        }
+        figure img {
+            display: block;
+            max-width: 100%;
+        }
+        figure figcaption { font-size: 1.25rem;}
+        figure a { text-decoration: none; padding: .25rem .5rem; background-color: green;color: white; border-radius: .25rem;}
+        article.details-section { margin-top: 1rem;}
+        .details-section details {
+    background-color: #e7e8e9;
+    margin-bottom: .5rem;
+    padding: 1rem;
+}
+     </style>
+  </head>
+  <body>
+    <header>
+      <h1>HTML5 Elements Begins here</h1>
+      <p>Some crispy lines begins here</p>
+    </header><!-- header tag ends here -->
+    <nav>
+      <a href="javascript:void(0);">Home</a>
+      <a href="javascript:void(0);">Dashboard</a>
+      <a href="javascript:void(0);">Profile</a>
+      <a href="javascript:void(0);">Contact</a>
+    </nav><!-- end of nav -->
+    <main class="main parent-container">
+        <section class="proudct-list">
+          <figure>
+            <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="" />
+            <figcaption>Product Name</figcaption>
+            <p>crispy lines goes here</p>
+            <a href="javascript:void(0);">Click Me</a>
+          </figure><!-- sample card -->
+          <figure>
+            <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="" />
+            <figcaption>Product Name</figcaption>
+            <p>crispy lines goes here</p>
+            <a href="javascript:void(0);">Click Me</a>
+          </figure><!-- sample card -->
+          <figure>
+            <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="" />
+            <figcaption>Product Name</figcaption>
+            <p>crispy lines goes here</p>
+            <a href="javascript:void(0);">Click Me</a>
+          </figure><!-- sample card -->
+        </section><!-- section ends here -->
+        <article class="details-section">
+            <details>
+                <summary>Epcot Center</summary>
+                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+            </details>
+            <details>
+                <summary>Epcot Center</summary>
+                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+            </details>
+            <details>
+                <summary>Epcot Center</summary>
+                <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+            </details>
+        </article><!-- article ends here-->
+    </main><!-- Main content  -->
+    <!-- <script src="src/script.js"></script> -->
+  </body>
+</html>
