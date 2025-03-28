@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZRiKA Admin Dashboard</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    
+    <!-- Style sheets cdn bootstrap v 5.3 and main theme style sheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <!-- Style sheets cdn bootstrap icons v 1.11.3-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
+    <link rel="stylesheet" href="js_css/dashboard.css">
+</head>
+<body class="dark">
+        <main class="wrapper-main">
+            <!--navigation-->
+            <aside class="navigation d-flex flex-column">
+                <div class="logo-container d-flex justify-content-center align-items-center border-sharp">
+                    <img src="./img/zrika_logo.png" alt="logo" class="logo rotate" />
+                    <img src="./img/zrika_logo_text.png" alt="ZRiKA" class="logo-text"/>
+                </div><!--logo-->
+                <div class="nav-menu d-flex justify-content-between flex-column">
+                    <div class="nav-menu-item mb-4">
+                        <p>Home</p>
+                        <a class="active" href="dashboard.html"><i class="bi bi-ui-checks-grid"></i><span>Dashboard</span></a>
+                        <a href="vault.html"><i class="bi bi-bank"></i><span>Vault</span></a>
+                        <li class="has-submenu">
+                            <a href="javascript:void(0);" class="chevron collapsed" data-for-listing="1"><i class="bi bi-bank"></i><span>Revenue Stream</span></a>
+                            <div class="nav-submenu" data-listing="1">
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+
+                            </div>
+                        </li>
+                        <li class="has-submenu">
+                            <a href="javascript:void(0);" class="chevron collapsed" data-for-listing="2"><i class="bi bi-bank"></i><span>Expense Stream</span></a>
+                            <div class="nav-submenu" data-listing="2">
+                                <a href="">Expense Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+                                <a href="">Menu one</a>
+
+                            </div>
+                        </li>
+                        <a href="javascript:void(0);"><i class="bi bi-bank"></i><span>Integration</span></a>
+                        <a href="javascript:void(0);"><i class="bi bi-bank"></i><span>Analytics</span></a>
+                    </div><!--group one-->
+                    <div class="nav-menu-item">
+                        <p>General</p>
+                        <a href="javascript:void(0);"><i class="bi bi-ui-checks-grid"></i><span>Developers</span></a>
+                        <a href="javascript:void(0);"><i class="bi bi-bank"></i><span>Help Desk</span></a>
+                    </div><!--group two-->
+                    <div class="nav-menu-item">
+                        <p id="collapse-menu"><i class="bi bi-nintendo-switch"></i> Collapse menu</p>
+                    </div><!--group-->
+                </div><!--nav menu-->
+            </aside><!-- navigation-->
+            <!--Content container-->
+            <section class="content-container col d-flex flex-column align-items-center">
+                <div class="page-title border-sharp d-flex align-items-center justify-content-between">
+                    <h5>Dashboard</h5>
+                    <div class="profile-container d-flex align-items-center">
+                        
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userSettings">
+                                <li class="title mb-3">Settings</li>
+                                <div class="border-sharp" style="height: 1px;"></div>
+                                <a class="" href="permission.html"><i class="bi bi-person-fill-gear"></i>Role & Permissions</a>
+                                <a class="" href="#"><i class="bi bi-bell-fill"></i>Notification Settings</a>
+                            </ul>
+                       
+                        <a class="icon-style" role="button" id="userSettings" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear-fill"></i></a>
+                        <a class="icon-style" href="javascript:void(0);"><i class="bi bi-bell-fill"></i></a>
+                        <div class="border-start ms-2 d-flex align-items-center user-container">
+                            <a class="icon-style" href="javascript:void(0);"><img src="./img/user.jpg" class="img-fluid user-profile" width="32" ></a>
+                            <div class="d-flex align-items-center user-details">
+                                <div class="ms-2 me-2">
+                                    <h6>User Name</h6>
+                                    <span>user@mail.com</span>
+                                </div>
+                                <button class="btn btn-outline-back sm" type="button" id="userDetails" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-chevron-compact-down"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="userDetails">
+                                    <li class="title mb-3">Settings</li>
+                                    <div class="border-sharp" style="height: 1px;"></div>
+                                    <a class="" href="permission.html"><i class="bi bi-person-fill-gear"></i>Role & Permissions</a>
+                                    <a class="" href="#"><i class="bi bi-bell-fill"></i>Notification Settings</a>
+                                </ul>
+                            </div><!--user details-->
+                        </div><!--user profile container-->
+                        <a class="icon-style" href="javascript:void(0);" id="theme-toggle"><i class="bi bi-moon"></i></a>
+                    </div><!--user profile-->
+                    
+                </div><!--title-->
+                <div class="main-content d-flex flex-column align-items-center justify-content-start">
+                    <div class="row-one d-flex flex-column">
+                        <div class="customize">
+                            <div class="bookmarks d-flex flex-row align-items-center">
+                                <a href="" class="button-type active">Standard</a>
+                                <a class="button-type ms-1" role="button" data-bs-toggle="modal" href="#newDashboard"><i class="bi bi-plus-lg"></i> Customize</a>
+                                <a style="margin-left: auto;" data-bs-toggle="collapse" href="#savedBookmarks" role="button" aria-expanded="false" aria-controls="savedBookmarks">Show Bookmarks</a>
+                            </div>
+                            <div class="collapse" id="savedBookmarks">
+                                <div class="card-nav pt-4">
+                                    <a class="btn btn-outline-secondary">Cash Inflow & Outflow Report</a>
+                                    <a class="btn btn-outline-secondary">Account Details</a>
+                                    <a class="btn btn-outline-secondary">Contact List</a>
+                                </div><!--header nav-->
+                            </div>
+                        </div><!--bookmarks-->
+                        <div class="funds-container d-flex flex-row">
+                            <div class="four-box all-accounts col-3">
+                                <div class="d-flex justify-content-between">
+                                    <select id="id_select2_example" class="form-select" aria-label="banks-list">
+                                    <option selected>All Banks</option>
+                                    <option value="1">Kotak bank</option>
+                                    <option value="2">HDFC bank</option>
+                                    <option value="3">ICICI bank</option>
+                                    <option value="4">Axis bank</option>
+                                    </select>
+                                    <button class="btn btn-icon ms-2" data-bs-toggle="modal" data-bs-target="#addBanklist"><i class="bi bi-plus-lg"></i></button>
+                                </div><!--banks list-->
+                                <div class="total-balance d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <h6>Total Balance</h6>
+                                        <h1 id="cur-rupee"></h1>
+                                    </div>
+                                    <button class="btn ico-circle ms-2 mb-1 overflow-hidden"><i class="bi bi-arrow-clockwise" style="background-color:transparent"></i></button>
+                                </div><!--balance money-->
+                                <div class="linked-accounts">
+                                    <h6><span>4</span>Linked banks</h6>
+                                    <div id="bank-list">
+                                        <img src="./img/banks/kotak.png" width="25" />
+                                        <img src="./img/banks/hdfc.png" width="25" />
+                                        <img src="./img/banks/ic.png" width="25" />
+                                        <img src="./img/banks/axis.png" width="25" />
+                                    </div>
+                                    <button class="btn btn-outline-secondary">Get Details<i class="bi bi-arrow-right-circle"></i></button>
+                                </div><!--linked accounts-->
+                            </div><!--box1-->
+                            <div class="four-box cash-in col border-loop">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <img src="./img/icons/cashin.png" width="45">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0">Cash In</h6>
+                                            <span>Income Review</span>
+                                        </div>
+                                    </div>
+                                    <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                </div><!--title-->
+                                <div class="chart-parent">
+                                    <canvas id="my-chart-cashin" width="" height="120"></canvas>
+                                </div><!--chart cashout-->
+                                <div class="cash-value">
+                                    <h4 id="cashin-currency" class="mb-0"></h4>
+                                    <span class="profit"><em>408</em> than last month</span>
+                                </div><!--cashin value-->
+                                <div class="earnings-data d-flex gap-1 flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="text-success">highest earnings</span>
+                                            <h6><em class="symbol"></em>56,394.21</h6>
+                                        </div>
+                                        <div>
+                                            <span class="text-end">date</span>
+                                            <h6><em class="symbol"></em>21 jan,2025</h6>
+                                        </div>
+                                    </div><!--highest-->
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="text-danger">lowest earnings</span>
+                                            <h6><em class="symbol"></em>56,394.21</h6>
+                                        </div>
+                                        <div>
+                                            <span class="text-end">date</span>
+                                            <h6><em class="symbol"></em>21 jan,2025</h6>
+                                        </div>
+                                    </div><!--lowest-->
+                                </div><!--earnings data-->
+                            </div><!--box2 cash in-->
+                            <div class="four-box cash-out col border-loop border-loop-orange">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex">
+                                        <img src="./img/icons/cashout.png" width="45">
+                                        <div class="ms-2">
+                                            <h6 class="mb-0">Cash Out</h6>
+                                            <span>Spending Review</span>
+                                        </div>
+                                    </div>
+                                    <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                </div><!--title-->
+                                <div class="chart-parent">
+                                    <canvas id="my-chart-cashout" width="" height="120"></canvas>
+                                </div><!--chart cashout-->
+                                <div class="cash-value">
+                                    <h4 id="cashout-currency" class="mb-0"></h4>
+                                    <span class="profit"><em>408</em> than last month</span>
+                                </div><!--cashout value-->
+                                <div class="earnings-data d-flex gap-1 flex-column">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="text-success">highest money out</span>
+                                            <h6><em class="symbol"></em>56,394.21</h6>
+                                        </div>
+                                        <div>
+                                            <span class="text-end">date</span>
+                                            <h6><em class="symbol"></em>21 jan,2025</h6>
+                                        </div>
+                                    </div><!--highest-->
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <span class="text-danger">lowest money out</span>
+                                            <h6><em class="symbol"></em>56,394.21</h6>
+                                        </div>
+                                        <div>
+                                            <span class="text-end">date</span>
+                                            <h6><em class="symbol"></em>21 jan,2025</h6>
+                                        </div>
+                                    </div><!--lowest-->
+                                </div><!--earnings data-->
+                            </div><!--box3 cash out-->
+                            <div class="four-box cash-unreceived col">
+                                
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <img src="./img/icons/unreceive.png" width="45">
+                                            <div class="ms-2">
+                                                <h6 class="mb-0">unreceived</h6>
+                                                <span>funds</span>
+                                            </div>
+                                        </div>
+                                        <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                    </div><!--title-->
+                                    <div class="cash-value">
+                                        <h4 id="unreceive-currency" class="mb-0"></h4>
+                                        <span class="profit"><em>408</em> than last month</span>
+                                    </div><!--unreceive value-->
+                                    <!--unreceived-->
+                                    <div class="border-sharp" style="height: 1px;"></div>
+
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <img src="./img/icons/unpaid.png" width="45">
+                                            <div class="ms-2">
+                                                <h6 class="mb-0">Unpaid</h6>
+                                                <span>funds</span>
+                                            </div>
+                                        </div>
+                                        <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                    </div><!--title-->
+                                    <div class="cash-value">
+                                        <h4 id="unpaid-currency" class="mb-0"></h4>
+                                        <span class="profit loss"><em>408</em> than last month</span>
+                                    </div><!--unpaid value-->
+                                    <!--unpaid-->
+                            </div><!--box4 cash unreceived-->
+                        </div><!--funds-container-->
+                    </div><!--row one-->
+                    <div class="row-one">
+                        <div class="card bg-dark income-expense-card">
+                            <div class="card-header flex-column has-sub">
+                                <div class="d-flex align-items-center justify-content-between col-12 px-3 py-3">
+                                    <div class="title">
+                                        <h5 class="card-title"><i class="bi bi-bar-chart"></i>Income and Expense Summary</h5>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    </div><!--title-->
+                                    <div class="card-nav">
+                                        <button type="button" class="btn btn-outline-secondary active">All</button>
+                                        <button type="button" class="btn btn-outline-secondary">Past 7 days</button>
+                                        <button type="button" class="btn btn-outline-secondary">Past 30 days</button>
+                                        <button type="button" class="btn btn-outline-secondary">Custom</button>
+                                    </div><!--header nav-->
+                                </div>
+                                <div id="legend-container" class="data-chart-legends col-12 d-flex justify-content-between">
+                                   
+                                </div><!--chart legends-->
+                            </div><!--panel head-->
+                            <div class="card-body">
+                                <div class="chart-parent">
+                                    <canvas id="myChart" width="" height="100"></canvas>
+                                </div>
+                            </div><!--body-->
+                        </div><!--card panel income and expense-->
+                    </div><!--row two ends here-->
+                    <div class="row-one">
+                        <div class="card bg-dark exp-card">
+                            <div class="card-header">
+                                <div class="title">
+                                    <h5 class="card-title"><i class="bi bi-star-half"></i>Experience more with Zrika</h5>
+                                </div><!--title-->
+                            </div><!--panel head-->
+                            <div class="card-body d-flex justify-content-between">
+                                <img src="./img/zriswitch.png" class="img-fluid" width="210" >
+                                <img src="./img/zritech.png" class="img-fluid" width="210" >
+                                <img src="./img/zrai-shield.png" class="img-fluid" width="210" >
+                                <img src="./img/zriva.png" class="img-fluid" width="210" >
+                                <img src="./img/zrina.png" class="img-fluid" width="210" >
+                            </div><!--body-->
+                        </div><!--card panel-->
+                    </div><!--row three ends-->
+                    <div class="row-one">
+                        <div class="d-flex gap-4 col-12">
+                            <div class="left-container d-flex flex-column gap-3 col">
+                                <div class="card bg-dark tax-card">
+                                    <div class="card-header">
+                                        <div class="title">
+                                            <h5 class="card-title"><i class="bi bi-percent"></i>Tax overview</h5>
+                                            <p class="card-text">Track your tax payments to stay compliant.</p>
+                                        </div><!--title-->
+                                        <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                    </div><!--panel head-->
+                                    <div class="card-body">
+                                        <div class="outstand-tax px-3 py-3 mb-3">
+                                            <p>Outstanding tax <span class="text-danger">(Due on 28-02-2025)</span></p>
+                                            <div class="trans-row bg-none pb-0">
+                                                <div class="tax-amt d-flex">
+                                                <img src="./img/icons/outstand-tax.png" width="45">
+                                                <div class="ms-2"><span>Tax amount</span> <em class="symbol"></em>56,397.00</div>
+                                                </div>
+                                                <div class="tax-gst">
+                                                    <span>GST &#128712;</span>
+                                                    <em class="symbol"></em>26,544.00
+                                                </div>
+                                                <div class="tax-tds">
+                                                    <span>TDS &#128712;</span>
+                                                    <em class="symbol"></em>2,654.00
+                                                </div>
+                                                <button class="btn btn-success">Pay Now</button>
+                                            </div><!--transaction row-->
+                                        </div><!--outstand tax-->
+                                        <div class="border-sharp" style="height: 1px;"></div>
+                                        <div class="paid-tax outstand-tax px-3 py-3 mt-3 d-flex">
+                                            <div class="left-part">
+                                                <p>Total tax paid</p>
+                                                <div class="trans-row bg-none pb-0">
+                                                    <div class="tax-amt d-flex">
+                                                        <img src="./img/icons/paid-tax.png" width="45">
+                                                        <div class="ms-2"><span>Tax amount</span><em class="symbol"></em>56,397.00</div>
+                                                    </div>
+                                                </div><!--transaction row-->
+                                            </div><!--left part-->
+                                            <div class="right-part ms-3 col ps-3">
+                                                <p>Last tax paid <span class="text-success">(Paid on 28-02-2025)</span></p>
+                                                <div class="trans-row bg-none pb-0">
+                                                    <div class=""><span>Tax amount</span><em class="symbol"></em>56,397.00</div>
+                                                   
+                                                    <div class="tax-gst">
+                                                        <span>GST &#128712;</span>
+                                                        <em class="symbol"></em>26,544.00
+                                                    </div>
+                                                    <div class="tax-tds">
+                                                        <span>TDS &#128712;</span>
+                                                        <em class="symbol"></em>2,654.00
+                                                    </div>
+                                                </div><!--transaction row-->
+                                            </div><!--right part-->
+                                        </div><!--outstand tax-->
+                                    </div><!--body-->
+                                </div><!--card panel tax overview-->
+
+                                <div class="card bg-dark cost-card">
+                                    <div class="card-header">
+                                        <div class="title">
+                                            <h5 class="card-title"><i class="bi bi-pie-chart-fill"></i>cost breakdown</h5>
+                                            <p class="card-text">Understand where your money goes</p>
+                                        </div><!--title-->
+                                        <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                    </div><!--panel head-->
+                                    <div class="card-body">
+                                        <div class="chart-parent-doughnut">
+                                            <canvas id="my-chart-doughnut" width="" height="120"></canvas>
+                                        </div><!--chart cashout-->
+                                    </div><!--body-->
+                                </div><!--card panel tax overview-->
+                            </div><!--left section-->
+                            <div class="card bg-dark transaction-card col">
+                                <div class="card-header">
+                                    <div class="title">
+                                        <h5 class="card-title"><i class="bi bi-arrow-down-up"></i>last transactions</h5>
+                                        <p class="card-text">A quick list of your recent transactions</p>
+                                    </div><!--title-->
+                                    <span class="ico-circle"><i class="bi bi-arrow-up-right"></i></span>
+                                </div><!--panel head-->
+                                <div class="card-body">
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            <span>Invoice Id</span>
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                            <span>status</span>
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                            <span>amount</span>
+                                            <em class="symbol"></em>1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                           
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em>1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status pending">
+                                           
+                                            pending
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em>1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status fail">
+                                           
+                                            failed
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em> 1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                           
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em> 1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                           
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em>1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status fail">
+                                           
+                                            failed
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em> 1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                           
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em> 1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                    <div class="trans-row">
+                                        <div class="name-date">
+                                           Santhosh prabhu
+                                            <span>date</span>
+                                        </div>
+                                        <div class="invoice-id">
+                                            
+                                            #00124567
+                                        </div>
+                                        <div class="trans-status success">
+                                           
+                                            paid
+                                        </div>
+                                        <div class="trans-amt">
+                                           
+                                            <em class="symbol"></em>1,24,000.00
+                                        </div>
+                                    </div><!--transaction row-->
+                                </div><!--body-->
+                            </div><!--card panel last transaction-->
+                        </div><!--tax / cost and last transaction-->
+                    </div><!--row four ends-->
+                </div><!-- main content-->
+                <section class="float-widget">
+                
+                </section><!--floating widget-->
+            </section><!-- container-->
+        </main><!-- wrapper-->
+  
+  <!-- create dahsboard Modal -->
+  <div class="modal fade" id="newDashboard" tabindex="-1" aria-labelledby="newDashboardLabel" aria-hidden="true">
+    <div class="modal-dialog modal-custom-lg">
+      <div class="modal-content card bg-dark">
+            <div class="modal-header card-header">
+                <div>
+                    <h5 class="modal-title" id="newDashboardLabel"><i class="bi bi-card-checklist"></i>Create New Dashboard</h5>
+                    <p class="card-text">Make and tweak your dashboard to match your business needs.</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div><!--header-->
+            <div class="modal-body card-body">
+                <div class="form-container dashboard-name">
+                    <form>
+                        <h6>Provide details for creating dashboard </h6>
+                        <div class="mb-3">
+                          <label for="nameDashborad" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="nameDashborad">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Set access</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                    </form>
+                
+                    <div class="footer d-flex justify-content-between align-items-center mt-3">
+                        <h6>Step 1/2</h6>
+                        <button type="button" class="btn btn-success">Next</button>
+                    </div><!--button-->
+                </div><!--form container-->
+                <div class="form-container dashboard-widget hide-this">
+                    <form>
+                        <h6>Choose your widget</h6>
+                        <div class="select-widget d-flex gap-2 flex-wrap justify-content-between mt-3">
+                            <div class="widget-list-item px-2 py-2">
+                                <input type="checkbox" class="form-check-custom">
+                                <img src="./img/w1.png" class="img-fluid" >
+                                <h6>Money In</h6>
+                            </div><!--widget list-->
+                            <div class="widget-list-item px-2 py-2">
+                                <input type="checkbox" class="form-check-custom">
+                                <img src="./img/w2.png" class="img-fluid" >
+                                <h6>Money Out</h6>
+                            </div><!--widget list-->
+                            <div class="widget-list-item px-2 py-2">
+                                <input type="checkbox" class="form-check-custom">
+                                <img src="./img/w3.png" class="img-fluid" >
+                                <h6>Receivable & Payable</h6>
+                            </div><!--widget list-->
+                            <div class="widget-list-item px-2 py-2">
+                                <input type="checkbox" class="form-check-custom">
+                                <img src="./img/w4.png" class="img-fluid" >
+                                <h6>Cash In & Cash Out Report</h6>
+                            </div><!--widget list-->
+                        </div><!--widget list contain-->
+                    </form>
+                
+                    <div class="footer d-flex justify-content-between align-items-center mt-4">
+                        <h6>Step 2/2</h6>
+                        <div class="button-groups">
+                            <button type="button" class="btn btn-outline-back me-3">Back</button>
+                            <button type="button" class="btn btn-success">Next</button>
+                        </div>
+                    </div><!--button-->
+                </div><!--form container-->
+            </div><!--body-->
+      </div><!--modal content-->
+    </div><!--modal container-->
+  </div><!--New dashboard modal-->
+
+  <!--Adding bank list modal-->
+  <!-- Modal -->
+  <div class="modal fade" id="addBanklist" tabindex="-1" aria-labelledby="addBanklistLabel" aria-hidden="true">
+    <div class="modal-dialog modal-custom-small">
+      <div class="modal-content card bg-dark">
+            <div class="modal-header card-header">
+                <div>
+                    <h5 class="modal-title" id="addBanklist"><i class="bi bi-card-checklist"></i>Link Bank Account</h5>
+                    <p class="card-text">To Continue, Please select your bank.</p>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div><!--header-->
+            <div class="modal-body card-body">
+                <div class="form-container bank-list">
+                    <form>
+                        <div class="outstand-tax px-3 py-3">
+                            <strong>Select Bank</strong>
+                            <div class="bank-list-container d-flex flex-wrap gap-3 mt-3">
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/axis.png" class="img-fluid"><span>Axis</span>
+                                </div>
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/sbi.png" class="img-fluid"><span>sbi</span>
+                                </div>
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/kotak.png" class="img-fluid"><span>kotak</span>
+                                </div>
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/hdfc.png" class="img-fluid"><span>hdfc</span>
+                                </div>
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/bob.png" class="img-fluid"><span>bob</span>
+                                </div>
+                                <div class="bank-list-item">
+                                    <img src="./img/banks/ic.png" class="img-fluid"><span>icici</span>
+                                </div>
+                            </div><!--list of banks-->
+                        </div>
+                    </form>
+                
+                    <div class="footer d-flex justify-content-between align-items-center mt-4">
+                        <h6>Step 1/2</h6>
+                        <button type="button" class="btn btn-success" disabled>Next</button>
+                    </div><!--button-->
+                </div><!--form container-->
+                <div class="form-container bank-details hide-this">
+                    <form class="">
+                        <div class="mb-3">
+                          <label for="accountNumber" class="form-label required">Account number</label>
+                          <input type="text" class="form-control" id="accountNumber" placeholder="Enter your bank account number">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="ifscCode" class="form-label required">IFSC code</label>
+                                <input type="text" class="form-control" id="ifscCode" placeholder="Enter IFSC code">
+                            </div>
+                            <div class="col">
+                                <label for="accountHolder" class="form-label">Account holder name</label>
+                                <input type="text" class="form-control" id="accountHolder" placeholder="Enter account Holder name">
+                            </div>
+                        </div><!--row-->
+                        <div class="mb-3">
+                            <input type="checkbox" class="form-check-custom" >
+                            <label class="text-primary">Set as primary account</label>
+                        </div><!--row-->
+                    </form>
+                
+                    <div class="footer d-flex justify-content-between align-items-center mt-3">
+                        <h6>Step 2/2</h6>
+                        <div class="button-groups">
+                            <button type="button" class="btn btn-outline-back me-3">Back</button>
+                            <button type="button" class="btn btn-success">Next</button>
+                        </div>
+                    </div><!--button-->
+                </div><!--form container-->
+            </div><!--body-->
+      </div><!--modal content-->
+    </div><!--modal container-->
+  </div><!--New dashboard modal-->
+</body>
+    <!-- jquery cdn v 3.7.1-->
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+     <!-- Js cdn bootstrap v 5.3-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--Chart js v 4.4.8-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <!--Dashboard main custom js-->
+    <script src="js_css/main.js"></script>
+    <script src="js_css/chart-custom.js"></script>
+    <script src="js_css/currency.js"></script> 
+</html>
