@@ -59,8 +59,10 @@ h1,h2,h3,h4,h5,h6 { text-transform: capitalize; font-family: "cabin-medium"; }
 .bg-none { background: none !important;}
 .border-start { border-color: var(--border-color)!important;} .border-end { border-color: var(--border-color)!important;}
 .border-top { border-color: var(--border-color)!important;} .border-bottom { border-color: var(--border-color)!important;}
-.w-90 { width: 90px;} .w-60 { width: 60px;} .w-50 { width: 50px;}
+.w-90 { width: 90px;} .w-60 { width: 60px;} .w-50 { width: 50px;} .w-40 {width: 40px;}
 .text-primary { color: var(--primary-color) !important;} .text-secondary { color: var(--secondary-color) !important;}
+.border-theme{ border: 1px solid var(--border-color) !important;} .border-light { border:1px solid var(--border-light) !important;}
+.border-radius { border-radius: var(--common-size) !important;}
 /* General declaration ends here */
 /* Dashboard begins here */
 .wrapper-main {
@@ -557,6 +559,7 @@ div#bank-list img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
 }
 .accordion-dark .accordion-item {
   border: 1px solid var(--bg-color) !important;
@@ -779,7 +782,6 @@ section.float-widget {
 	vertical-align: text-top;
 	height: 20px;
 	width: 20px;
-	-webkit-appearance: none;
   opacity: 1;
 }
 
@@ -836,7 +838,7 @@ section.float-widget {
   text-transform: capitalize;
   padding-left: 1.25rem;
 }
-.badge-outline:before {
+.badge-outline:before, .dot-before::before {
   content: "";
   width: 7px;
   height: 7px;
@@ -853,6 +855,11 @@ div#tab-standard .accordion-dark .badge-outline {
 }
 /* Permission page ends here */
 
+/* vault page begins here */
+.account-item span {
+  display: block;
+  color: var(--primary-color);
+}
 
 /* animation class goes here */
 .rotate {
