@@ -61,8 +61,10 @@ h1,h2,h3,h4,h5,h6 { text-transform: capitalize; font-family: "cabin-medium"; }
 .border-top { border-color: var(--border-color)!important;} .border-bottom { border-color: var(--border-color)!important;}
 .w-90 { width: 90px;} .w-60 { width: 60px;} .w-50 { width: 50px;} .w-40 {width: 40px;}
 .text-primary { color: var(--primary-color) !important;} .text-secondary { color: var(--secondary-color) !important;}
-.border-theme{ border: 1px solid var(--border-color) !important;} .border-light { border:1px solid var(--border-light) !important;}
+.border-theme{ border: 1px solid var(--border-color) !important;} 
+.border-light, .accordion-dark .accordion-item.border-light { border:1px solid var(--border-light) !important;}
 .border-radius { border-radius: var(--common-size) !important;}
+.counter { font-size: var(--common-size); color: var(--primary-color); margin-right: .25rem;}
 /* General declaration ends here */
 /* Dashboard begins here */
 .wrapper-main {
@@ -431,6 +433,7 @@ div#bank-list img {
   border:1px solid var(--btn-border);
   border-radius: 50%;
 }
+.ico-circle-sm { width: 24px; height: 24px;}
 .ico-circle i { color: var(--primary-color);} .ico-circle:hover i {color:#03d872;}
 .cash-value span { font-size: .75rem; position: relative; top:-5px ;}
 .cash-value span.profit {
