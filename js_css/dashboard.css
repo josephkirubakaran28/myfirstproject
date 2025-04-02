@@ -433,7 +433,7 @@ div#bank-list img {
   border:1px solid var(--btn-border);
   border-radius: 50%;
 }
-.ico-circle-sm { width: 24px; height: 24px;}
+.ico-circle-sm { width: 22px; height: 22px;}
 .ico-circle i { color: var(--primary-color);} .ico-circle:hover i {color:#03d872;}
 .cash-value span { font-size: .75rem; position: relative; top:-5px ;}
 .cash-value span.profit {
