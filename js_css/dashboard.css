@@ -297,6 +297,14 @@ img.user-profile {
   padding-bottom: .15rem;
   max-width: 32px;
 }
+.user-container {
+  width: 60px;
+  overflow: hidden;
+}
+.user-container .user-details{
+  display: flex;
+  align-items: center;
+}
 .user-details h6 {
   margin-bottom: 0;
   font-size: 0.875rem;
