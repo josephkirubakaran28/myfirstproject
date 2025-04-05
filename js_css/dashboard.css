@@ -781,6 +781,9 @@ section.float-widget {
 
 /* checkbox custom style and switch */
 .form-check-custom {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
   position: relative;
 	border: 2px solid var(--bs-green);
 	border-radius: 2px;
@@ -795,11 +798,6 @@ section.float-widget {
 	width: 20px;
   opacity: 1;
 }
-
-/* input[type=checkbox]:hover {
-  opacity: 1;
-} */
-
 .form-check-custom:checked {
   background-color: var(--bs-green);
   opacity: 1;
@@ -820,7 +818,6 @@ section.float-widget {
   margin: -1px -1px 0 -1px;
   transform: rotate(45deg) translate(-50%, -50%);
 }
-
 .form-switch .form-check-input:checked {
   background-color: var(--bs-green);
   border-color: var(--bs-green);
@@ -835,7 +832,6 @@ section.float-widget {
 .permission-card .card-body h6 { color: #bcbcbc;}
 .module-list, .permission-list { 
   padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 .has-check + .has-check {
   margin-top: 1rem;
